@@ -81,7 +81,7 @@ class Instant_Notifier {
 	 */
 	public function __construct() {
 		// Load translations
-		load_plugin_textdomain( 'instant-notifier', false, dirname( $this->basename ) . '/languages' );
+		load_plugin_textdomain( 'instant-notifier', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 		// Add cron interval
 		add_filter( 'cron_schedules',                         array( $this, 'add_interval' )    );
