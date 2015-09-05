@@ -178,6 +178,11 @@ class Instant_Notifier {
 			// Build an array of all the items
 			$rss_items = $simplepie_object->get_items();
 
+			// If there are no items, don't proceed with feed
+			if ( ! $rss_items ) {
+				continue;
+			}
+
 			// Check latest time of previous fetch
 			$last_latest_time = isset( $options[ $feed ] ) ? $options[ $feed ] : '';
 
